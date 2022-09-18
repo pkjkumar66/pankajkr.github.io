@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Pankaj Kumar</title>
-    <link>https://pankajkr.github.io/home/</link>
+    <link>https://pkjkumar66.github.io/home/</link>
     <description>Recent content in Homes on Pankaj Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020 Pankaj Kumar</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://pankajkr.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://pkjkumar66.github.io/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://pankajkr.github.io/home/about/</link>
+      <link>https://pkjkumar66.github.io/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://pankajkr.github.io/home/about/</guid>
+      <guid>https://pkjkumar66.github.io/home/about/</guid>
       <description>
         Hi All!,
         I'm Pankaj Kumar, software engineer.
@@ -26,10 +26,10 @@
     
     <item>
       <title>Teaching Experience</title>
-      <link>https://pankajkr.github.io/home/teaching/</link>
+      <link>https://pkjkumar66.github.io/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://pankajkr.github.io/home/teaching/</guid>
+      <guid>https://pkjkumar66.github.io/home/teaching/</guid>
       <description>
         MTH308A - Principles Of Numerical Computations, with Prof. S. Ghorai
       </description>
