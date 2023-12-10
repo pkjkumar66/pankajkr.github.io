@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
+<!-- page-title section -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +27,7 @@
 
   <link rel="canonical" href="https://pkjkumar66.github.io/">
 
-  <title>blog</title>
+  <title>A Journey through Backend Development</title>
 </head>
 
 <body id="top">
@@ -33,7 +35,7 @@
 <!-- page header section   -->
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
   <div class="container">
-    
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target=".navbar-collapse" aria-expanded="false">
@@ -45,14 +47,13 @@
       <a class="navbar-brand" href="/">Pankaj Kumar</a>
     </div>
 
-
     <div class="navbar-collapse collapse in" id="#navbar-collapse-1" aria-expanded="true" style="">
       <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"><a href="/#top">Home</a></li>
           <li class="nav-item"><a href="/#experience">Experience</a></li>
-          <li class="nav-item"><a href="../projects/projects.html">Projects</a></li>
-          <li class="nav-item"><a href="blog.html">Blog</a></li>
-          <li class="nav-item"><a href="../teaching/teaching.html">Teaching</a></li>
+          <li class="nav-item"><a href="../../projects/projects.html">Projects</a></li>
+          <li class="nav-item"><a href="../blog.html">Blog</a></li>
+          <li class="nav-item"><a href="../../teaching/teaching.html">Teaching</a></li>
       </ul>
     </div>
 
@@ -60,28 +61,78 @@
 </nav>
 <span id="homepage" style="display: none"></span>
 
-
+<br>
 <!-- add your logic -->
 <section id="blog" class="blog-section">
- <div class="container">
-   <div class="row">
-    <h1>Blog Posts</h1>
-    <ul>
-      <li><a href="post/blog-post-3.html">MS in Technology Admission Requirements</a></li>
-      <li><a href="post/blog-post-1.html">Road Map to Become a Backend Developer</a></li>
-      <li><a href="post/blog-post-4.html">Small Applications for Skill Enhancement</a></li>
-      <li><a href="post/blog-post-5.html">A Journey through Backend Development</a></li>
-      <li><a href="post/blog-post-2.html">Turning Your Samsung Mobile into a Computer</a></li>
-      <li><a href="https://noisy-locust-894.notion.site/learn-git-e7f51243df2a4a11bf1b07201f31df3c" title="Learn Git">Learn Git</a></li>
-      <!-- <li><a href="blog/blog-post-3.html">Getting Started with Cloud Technologies</a></li> -->
-      <!-- <p><a href="../index.html">Back to Homepage</a></p> -->
-    </ul>
-    </div>
-  </div>
+    <div class="container">
+        <h1 style="color: #0056b3">Building a Complete Application: A Journey through Backend Development</h1>
 
+        <p>In the realm of software development, building a robust and scalable backend is a critical aspect. In this blog, we'll embark on a journey through the different phases of backend development, from identifying problems and requirements to deploying a fully functional application. Our focus will be on using modern tools and practices to streamline the development and deployment processes.</p>
+
+        <h2>Backend Development Phase</h2>
+
+        <h3>Identify Problems/Requirements</h3>
+        <p>The first step in building any application is to clearly understand the problems you're solving and the requirements you need to meet. This involves collaboration with stakeholders, gathering insights, and defining the scope of the project.</p>
+
+        <h3>Design High-Level Components (HLD)</h3>
+        <p>Once the requirements are clear, we move on to designing the High-Level Components (HLD) of our application. This includes outlining the architecture, defining major modules, and understanding how different components will interact.</p>
+
+        <h3>Design Each Component in Detail (LLD)</h3>
+        <p>With the high-level overview in place, we dive into the details with Low-Level Design (LLD). This phase involves breaking down each major component into smaller, manageable parts, specifying data structures, algorithms, and APIs.</p>
+
+        <h3>Proof of Concept (POC)</h3>
+        <p>Before full-scale development begins, it's often beneficial to create a Proof of Concept (POC). This allows us to validate our design decisions, test critical functionality, and ensure feasibility.</p>
+
+        <h3>Development</h3>
+
+        <h4>Choose Language According to Application Needs</h4>
+        <p>Choosing the right programming language is crucial. Depending on the application's requirements, we might opt for languages like Java, Python, or Node.js.</p>
+
+        <h4>Frameworks</h4>
+        <p>Frameworks provide a structured way to build applications. For our backend, we consider using frameworks such as Spring Boot, Django, Express etc depending on the specific needs of our project.</p>
+
+        <h4>Build Tools</h4>
+        <p>Efficient build tools are essential for managing dependencies and automating the build process. Options include Maven, Gradle, Ant, and npm, depending on the chosen language and framework.</p>
+
+        <h4>Version Control System</h4>
+        <p>Version control is fundamental. We push our code to a repository on GitHub or a similar hosting service, ensuring collaboration, version tracking, and code integrity.</p>
+
+        <h3>Deployment</h3>
+        <p>Ensuring a robust development workflow, Continuous Integration (CI) and Continuous Deployment (CD) play pivotal roles. Automation tools like Jenkins or GitHub Actions streamline these processes.</p>
+
+        <h4>Continuous Integration/Continuous Deployment (CI/CD)</h4>
+        <p>To optimize the development pipeline, a script is crafted for automating build, testing, and deployment procedures.</p>
+       
+
+        <ul>
+            <li>
+                <h4>CI: Generate Image/Artifact</h4>
+                <p>Automated and regular integration of code changes takes place, resulting in the creation of a new image with an updated tag, which is then pushed into a designated image storage.</p>
+                <p>For image storage, both public and private repositories can be utilized:</p>
+                    <ul>
+                        <li><strong>Public Repository:</strong> DockerHub</li>
+                        <li><strong>Private Repository:</strong> Amazon Elastic Container Registry (ECR)</li>
+                    </ul>
+            </li>
+            <li>
+                <h4>CD: Deploy to Machine</h4>
+                 <p>Deployment involves retrieving the image or artifact from ECR and deploying it to an EC2 instance using Docker as the containerization tool.</p>
+            </li>
+        </ul>
+
+        <h3>Docker</h3>
+        <p>Docker, a fundamental tool for containerization, ensures the consistency of our application across various environments.</p>
+
+        <h3>Managing Multiple Containers</h3>
+        <p>For efficient orchestration and management of multiple containers, we leverage Kubernetes (K8s). This approach guarantees scalability, resilience, and optimal resource utilization.</p>
+
+        <h2 style="color: #0056b3">Conclusion:</h2>
+        <p>This blog outlines a comprehensive approach to backend development, from the initial problem identification to the deployment and orchestration of a fully functional application. Each phase involves utilizing modern tools and best practices to enhance efficiency and maintainability. Feel free to explore each section in more detail based on your specific needs and preferences. Happy coding!</p>
+
+        <p><a href="../blog.html">Back to Blog</a></p>
+    </div>
 </section>
-<br>
-<br>
+
 
 
 <!-- copyright section -->
@@ -164,11 +215,11 @@
   </div>
 </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-    <script src="/js/jquery-1.12.3.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/hugo-academic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+<script src="/js/jquery-1.12.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/hugo-academic.js"></script>
 
 
 
