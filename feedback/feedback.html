@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .feedback-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .feedback-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            float: right;
+            cursor: pointer;
+        }
+
+        .feedback-form {
+            margin-top: 20px;
+        }
+
+        .feedback-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Feedback Button -->
+<button class="feedback-btn" onclick="openFeedbackModal()">Give Feedback</button>
+
+<!-- Feedback Modal -->
+<div class="overlay" id="overlay"></div>
+<div class="feedback-modal" id="feedbackModal">
+    <span class="close-btn" onclick="closeFeedbackModal()">&times;</span>
+    <h2>Feedback Form</h2>
+    <div class="feedback-form">
+        <label for="userFeedback">Your Feedback:</label>
+        <textarea id="userFeedback" rows="4" cols="50"></textarea>
+        <br>
+        <button onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+    <div class="feedback-list" id="feedbackList">
+        <!-- Display submitted feedback here -->
+    </div>
+</div>
+
+<script>
+    function openFeedbackModal() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('feedbackModal').style.display = 'block';
+    }
+
+    function closeFeedbackModal() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('feedbackModal').style.display = 'none';
+    }
+
+    function submitFeedback() {
+        const feedbackText = document.getElementById('userFeedback').value;
+        if (feedbackText.trim() !== '') {
+            const feedbackList = document.getElementById('feedbackList');
+            const feedbackItem = document.createElement('div');
+            feedbackItem.textContent = feedbackText;
+            feedbackList.appendChild(feedbackItem);
+            // You can send the feedback data to the server using AJAX here
+            // For simplicity, we are just displaying it on the page
+            document.getElementById('userFeedback').value = ''; // Clear the textarea
+        }
+    }
+</script>
+
+
+<!-- example -->
+
+<div class="WRxK9C39esL5cKFHOvxG"><h2 class="UOrGff6b8fxPgjHgl_7Z zA1obHSCJ0DgevXLPQY9 rZpZOr5KGLQAswTvtfgr">And Over 200,000 Satisfied Engineers.</h2><div class="ax1gGAgpG_0Pxx10ZSMD"><div class="glide glide--ltr glide--slider glide--swipeable" id="js-product-page-testimonials-carousel"><div class="glide__track" data-glide-el="track"><ul class="glide__slides" style="transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 4645px; transform: translate3d(0px, 0px, 0px);"><li class="glide__slide glide__slide--active" style="width: 297.667px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/1b9a05eb524cd1db08c6.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Alex</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/a2b3c3709ffedce2a22a.png" alt="Google logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">AlgoExpert was the backbone of my technical coding interview preparation. It allows you to efficiently work through the most common variations of problems asked by top-tier companies without having to spend hours 'battling' an algorithm only to come up with an inefficient or incorrect solution. There are a lot of resources available for repetition, but AlgoExpert differentiates its product by providing the 'how' and 'why' in clear and concise videos. Developing a deeper understanding of how to approach these problems is better than trying to memorize lines of code. I highly recommend AlgoExpert.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/6592e47c701c3ba79dbb.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Corbin</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Developer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/6591cdc0702b32310306.png" alt="Amazon logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">As a scientist who was looking to break into Tech, I knew the underlying logic of programming, but I had a lot of gaps in my understanding, especially on the types of algorithms questions asked at interviews. I can confidently say that AlgoExpert is one of the best resources out there for interview preparation, with fantastic video tutorials and an excellent question selection that allows you to get a deep understanding of the topics and confidence in your problem solving ability. The site is incredibly intuitive to use and I think that the staff are some of the best out there, being incredibly supportive and passionate about offering a great customer experience. I cannot recommend AlgoExpert highly enough.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/7072c78919931af052cc.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Carlos</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Developer Intern</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/b2bd91d7b87b2181ca45.png" alt="Microsoft logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">I'm just writing to thank you for this product. I had failed in so many interviews before, but I wanted to get into a top tech company so much that I even enrolled in a Master's program. Even then, I was unsure if I had what it takes to make it. From the moment I heard your first video explanation, I thought 'this is exactly the way to solve an interview question' (plus the extra points you can grab by asking clarifying questions). After a few months of studying, mainly on AlgoExpert, I got offers to intern at Microsoft and Google!</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/a0ae92ef8d06f76c2ab9.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Marlies</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/535955e7fb592d888cc5.png" alt="Palantir logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">I just accepted an offer with Palantir, and also received an offer from Amazon and a handful of startups. AlgoExpert does a great job selecting problems- many of my interview questions were variants of problems on the website. And when I came across problems I hadn't seen before, AlgoExpert gave me the tools to select the right data structures and identify patterns. Thanks AlgoExpert!</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/e64dc64b640a5660031f.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Adarsh</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/f16a65e0bb8afbc03b4d.png" alt="Oracle logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">I just got a job offer from Oracle and most of the questions they asked, I had practiced on AlgoExpert. Even when they asked questions I was not familiar with, I was able to break down the problem and write code which I learned from the explanations section on AlgoExpert. Being a Computer Science Engineering student, I had fundamental knowledge in Data Structures &amp; Algorithms, but I didn't know how to approach, break down and apply this knowledge to solve problems. Also since all the problems are classified into categories, I was able to easily identify my weak points and work on those. Extremely grateful to AlgoExpert !</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/bc23db5c75890195ea7a.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Elana</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Senior Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/3b7d9f4b073deb6a9b74.png" alt="Bloomberg logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">The video explanations and detailed code examples on AlgoExpert have changed the way I approach coding problems. It has been an incredible asset during my career journey and I highly recommend it to anyone preparing for the job market.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/750fd7ff32a5f82fea20.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Alberto</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/d203a613de57ce6ccc4a.png" alt="Capital One logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">I've done Udemy, Udacity, Interview Cake, Educative, Egghead, Pluralsight, MIT OpenCourseWare, LeetCode, CodeSignal and various Youtube courses but this stuff that you all are putting out is among the best. Great work!</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/ddea69f603de80265d0f.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Onyeka</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Web Developer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/9571632cbce64faa29c2.png" alt="Harvard logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">You can choose to spend your time scouring the internet for resources, or you can invest your money wisely and get as good a resource as you'll need. AlgoExpert is a big league product, with a high quality selection of algorithms and expert explanations. This is the best place to sharpen your problem solving skills on all the best material.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/ac3ed816e6b39ca926a5.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Ayoub</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer Intern</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/52d8f54e445899c1e716.png" alt="Zillow logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">Hey, just wanted to thank you for AlgoExpert! I signed up a few months back and I went through 60% of the problems. Before AlgoExpert I was awful at solving anything harder than a LeetCode easy, now I can do LeetCode mediums without much effort and tackle LeetCode hards in a reasonable time frame! I don’t think I would have gotten an internship without AlgoExpert, so thank you!</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/82b39796603734f6c314.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Sreepriya</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Developer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/b2bd91d7b87b2181ca45.png" alt="Microsoft logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">According to me landing on a dream job requires strong determination and continuous practice. But the most important thing is to find the right resource for the practice and I found AlgoExpert. Algoexpert provided me a platform to improve my thought process towards an algorithm question. It really helped me to shape my thinking skills and coding skills. I would definitely recommend to all the aspiring software engineers.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/ecede41fd0e736c55044.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Erik</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/6c585c33ca6c71c79bb7.png" alt="BlackRock logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">There are thousands of practice problems out there, but AlgoExpert provides curation, in-depth explanation, code testing, and support for multiple programming languages. A lot of the problems even have multiple solutions. I'm very glad I invested in it, and even though I've already been hired, I'm still using it to keep my skills up.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/083586f534608d90c9f3.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Eren</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Data Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/0384060dcbf73b6a707c.png" alt="Simon Data logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">AlgoExpert was the best resource I used during my coding interview prep. Its structure, hand-picked questions, and detailed explanation videos really set it apart from other resources I tried. It helped me go into my interviews with confidence, allowing me to do well not only with small startups but also with big tech companies.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/54829148851776070bb1.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Mitch</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Software Engineer</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/609d9862b9f93e56a35b.svg" alt="Ethereum logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">I've tried a few of the algorithm learning resources and I think AlgoExpert is the best (and no I'm not being paid for this post). The site is super polished and offers a nice breadth of problems to get you best prepared with great solutions and video explanations. If you're on the job hunt, I think pairing AlgoExpert with an interviewing resource like Pramp and/or Interviewing.io is a great strategy.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px; margin-right: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/68e1094f7b6748b70db5.jpg" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">Jeremy</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Analyst</h5><img class="H5coerDmc54yQuxKENm3" loading="lazy" src="https://assets.algoexpert.io/spas/main/prod/g4608c7b310-prod/dist/images/6c585c33ca6c71c79bb7.png" alt="BlackRock logo"></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag">AlgoExpert helped me be confident in my interviews. Their curated list of questions and Clement's thorough review videos ensured that I was ready for anything thrown at me in onsite interviews. I highly recommend AlgoExpert to anyone looking to secure a tech job, or just brush up on their algorithm skills.</p></div></div></li><li class="glide__slide" style="width: 297.667px; margin-left: 6px;"><div class="waEngFdQZ9Jyfnmg8UYt"><div class="BkwHxXbCwqMKAmjewOHj"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNTguNzUgMjU4Ljc1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTguNzUgMjU4Ljc1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8Y2lyY2xlIGN4PSIxMjkuMzc1IiBjeT0iNjAiIHI9IjYwIiBmaWxsPSIjMDIyMDNjIi8+Cgk8cGF0aCBkPSJNMTI5LjM3NSwxNTBjLTYwLjA2MSwwLTEwOC43NSw0OC42ODktMTA4Ljc1LDEwOC43NWgyMTcuNUMyMzguMTI1LDE5OC42ODksMTg5LjQzNiwxNTAsMTI5LjM3NSwxNTB6IiBmaWxsPSIjMDIyMDNjIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" class="Lf54I647Cze69AhrbtpE" loading="lazy" alt="user profile picture"></div><h5 class="_QKimvkvtisyHX3ETytq">You</h5><div class="cKG6GqnOzU_n1czCXVjV"><h5 class="dXLitoQp7ggFDQwhv5wn">Dream Job</h5></div><div class="ruBjzjziQTKUYUqNERHy"><p class="tfHFoLadboR7bRsFgBag"><span>Got an AlgoExpert success story to share? <a class="
+    F78RBxVMz4hF97Tpylcp
+    Sc2xqJ5APDitlQFz7qjw
+    
+    
+  " href="/reviews">Tell us</a> where you work, what your position is, how helpful AlgoExpert was in getting it, and give us a link to your LinkedIn profile!</span></p></div></div></li></ul></div><div class="glide__arrows I_espb3AkIcyeDJl6ztt" data-glide-el="controls"><button class="glide__arrow glide__arrow--left NzSEtNklfy8Jy656bxpM HARfF00K6hVnaLIQgqr_ glide__arrow--disabled" data-glide-dir="<" aria-label="Previous Review" disabled=""><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 400.004 400.004" xml:space="preserve" class="QoYVRMVJ8v93ZO1pFXWE SyxAvd25LxAr0j2aoLjc"><path d="M382.688 182.686H59.116l77.209-77.214c6.764-6.76 6.764-17.726 0-24.485-6.764-6.764-17.73-6.764-24.484 0L5.073 187.757c-6.764 6.76-6.764 17.727 0 24.485l106.768 106.775a17.252 17.252 0 0 0 12.242 5.072c4.43 0 8.861-1.689 12.242-5.072 6.764-6.76 6.764-17.726 0-24.484l-77.209-77.218h323.572c9.562 0 17.316-7.753 17.316-17.315 0-9.562-7.753-17.314-17.316-17.314z"></path></svg></button><button class="glide__arrow glide__arrow--right NzSEtNklfy8Jy656bxpM" data-glide-dir=">" aria-label="Next Review"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 268.832 268.832" xml:space="preserve" class="QoYVRMVJ8v93ZO1pFXWE "><path d="m265.171 125.577-80-80c-4.881-4.881-12.797-4.881-17.678 0-4.882 4.882-4.882 12.796 0 17.678l58.661 58.661H12.5c-6.903 0-12.5 5.597-12.5 12.5 0 6.902 5.597 12.5 12.5 12.5h213.654l-58.659 58.661c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.439 5.64 3.661 8.839 3.661s6.398-1.222 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z"></path></svg></button></div></div><div class="lLx9iRkGbgSUYAR34hWE"><button type="button" class="
+      kZdAWpTCFXtqBNJZmBrC 
+      ApkS_ZYTyCYkAVjFt0oq
+      jb8Emwf2XrLYx39xzQfT
+      l_1E0OGDfXL0U5Bsljgt
+      CVtQHoB40j6b6F720wjA
+    "><span class="
+    nRd0keG9TfySx8KUodFY
+    
+  ">Read More Testimonials</span><div class="
+    weOuSrFo4mA7ClCIqvqa
+    czx256iDoWyglmIH1zAw
+    
+  "><div class="y5yeeVNmCkQMPgoA9Mur AlSwueHyyr4QQPBCndcV " style="height: 25px; width: 25px;"></div></div></button></div></div></div>
+
+</body>
+</html>
