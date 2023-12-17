@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
+<!-- page-title section -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +27,7 @@
 
   <link rel="canonical" href="https://pkjkumar66.github.io/">
 
-  <title>blog</title>
+  <title>A Guide to create docker-image</title>
 </head>
 
 <body id="top">
@@ -33,7 +35,7 @@
 <!-- page header section   -->
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
   <div class="container">
-    
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target=".navbar-collapse" aria-expanded="false">
@@ -45,14 +47,13 @@
       <a class="navbar-brand" href="/">Pankaj Kumar</a>
     </div>
 
-
     <div class="navbar-collapse collapse in" id="#navbar-collapse-1" aria-expanded="true" style="">
       <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"><a href="/#top">Home</a></li>
           <li class="nav-item"><a href="/#experience">Experience</a></li>
-          <li class="nav-item"><a href="../projects/projects.html">Projects</a></li>
-          <li class="nav-item"><a href="blog.html">Blog</a></li>
-          <li class="nav-item"><a href="../teaching/teaching.html">Teaching</a></li>
+          <li class="nav-item"><a href="../../projects/projects.html">Projects</a></li>
+          <li class="nav-item"><a href="../blog.html">Blog</a></li>
+          <li class="nav-item"><a href="../../teaching/teaching.html">Teaching</a></li>
       </ul>
     </div>
 
@@ -60,30 +61,96 @@
 </nav>
 <span id="homepage" style="display: none"></span>
 
-
+<br>
 <!-- add your logic -->
 <section id="blog" class="blog-section">
- <div class="container">
-   <div class="row">
-    <h1>Blog Posts</h1>
-    <ul>
-      <li><a href="post/blog-post-3.html">MS Admission Requirements</a></li>
-      <li><a href="post/blog-post-1.html">Road Map to Become a Backend Developer</a></li>
-      <li><a href="post/blog-post-4.html">Small Applications for Skill Enhancement</a></li>
-      <li><a href="post/blog-post-5.html">A Journey through Backend Development</a></li>
-      <li><a href="post/blog-post-6.html">A Guide to Financial Success</a></li>
-      <li><a href="post/blog-post-7.html">A Guide to create docker-image</a></li>
-      <li><a href="post/blog-post-2.html">Turning Your Samsung Mobile into a Computer</a></li>
-      <li><a href="https://noisy-locust-894.notion.site/learn-git-e7f51243df2a4a11bf1b07201f31df3c" title="Learn Git">Learn Git</a></li>
-      <!-- <li><a href="blog/blog-post-3.html">Getting Started with Cloud Technologies</a></li> -->
-      <!-- <p><a href="../index.html">Back to Homepage</a></p> -->
-    </ul>
-    </div>
-  </div>
+    <div class="container">
+            <h1 style="color: #0056b3">A Guide to build and run docker-image</h1>
+                <p>Welcome to our guide on running your application using Docker containers! Docker simplifies the process of packaging, distributing, and running applications in a consistent environment. In this blog post, we'll walk you through the essential steps, from writing your application code to pushing the Docker image to a private or public registry.</p>
+            
+                <h2>1. Write Your Application Code</h2>
+            
+                <p>Start by developing your application in the language of your choice. Whether it's Java, Python, JavaScript, HTML, or CSS, Docker can containerize applications written in various languages.</p>
+            
+                <h2>2. Build Your Docker Image</h2>
+            
+                <p>To containerize your application, you need to create a Dockerfile. This file contains instructions for building a Docker image, which is a lightweight, standalone, and executable package that includes your application and its dependencies.</p>
+            
+                <pre>
+                    <code>
+                        # Use the official OpenJDK base image with a specific Java version
+                        FROM openjdk:17
+            
+                        # Set the working directory inside the container
+                        RUN mkdir -p /home/my-app
+            
+                        # Copy the JAR file (your Java application) into the container
+                        COPY target/app-0.0.1-SNAPSHOT.jar /home/my-app/application.jar
+            
+                        # Expose the port your application listens on (if applicable)
+                        EXPOSE 8080
+            
+                        # Define the command to run your Java application
+                        CMD ["java", "-jar", "/home/my-app/application.jar"]
+                    </code>
+                </pre>
+            
+                <p>After creating your Dockerfile, build the Docker image by running the following commands in the terminal:</p>
+            
+                <pre>
+                    <code>
+                        docker build . -t image-name:version
+                        docker run image-name:version
+                    </code>
+                </pre>
+            
+                <p>If your application uses a specific port, you can map it to the host machine using the <code>-p</code> flag. For example:</p>
+            
+                <pre>
+                    <code>
+                        docker run -p 8000:8000 image-name:version
+                    </code>
+                </pre>
+            
+                <h2>3. Push Your Image to a Registry</h2>
+            
+                <p>Once you've successfully built your Docker image, you may want to share it with others or deploy it to different environments. This involves pushing the image to a Docker registry.</p>
+            
+                <h3>Using Jenkins or GitHub Actions (For Multiple Services)</h3>
+            
+                <p>If you're managing multiple services, you can automate the image push process using Jenkins or GitHub Actions. Here's a brief overview:</p>
+            
+                <pre>
+                    <code>
+                        # Login to Docker Registry
+                        docker login
+            
+                        # Tag and Push the Image
+                        docker tag old_image:latest new_image:latest
+                        docker push domain_registry/image-name:version
+                    </code>
+                </pre>
+            
+                <h3>Manually (For Single Service)</h3>
+            
+                <p>For a single service, you can manually push the Docker image:</p>
+            
+                <pre>
+                    <code>
+                        # Pull the Image
+                        docker pull domain_registry/image-name:version
+            
+                        # Run the Image
+                        docker run -p 8000:8000 domain_registry/image-name:version
+                    </code>
+                </pre>
+            
+                <p>By following these steps, you can seamlessly integrate Docker into your development and deployment workflow, making your applications more portable and easier to manage across different environments. Happy coding!</p>
 
+        <p><a href="../blog.html">Back to Blog</a></p>
+    </dev>
 </section>
-<br>
-<br>
+
 
 
 <!-- copyright section -->
@@ -166,11 +233,11 @@
   </div>
 </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-    <script src="/js/jquery-1.12.3.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/hugo-academic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+<script src="/js/jquery-1.12.3.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/hugo-academic.js"></script>
 
 
 
