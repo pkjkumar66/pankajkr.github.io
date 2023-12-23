@@ -66,7 +66,7 @@
 <section id="blog" class="blog-section">
     <div class="container">
             <h1 style="color: #0056b3">A Guide to build and run docker-image</h1>
-                <p>Welcome to our guide on running your application using Docker containers! Docker simplifies the process of packaging, distributing, and running applications in a consistent environment. In this blog post, we'll walk you through the essential steps, from writing your application code to pushing the Docker image to a private or public registry.</p>
+                <p>Docker simplifies the process of packaging, distributing, and running applications in a consistent environment. In this blog post, we'll walk you through the essential steps, from writing your application code to pushing the Docker image to a private or public registry.</p>
             
                 <h2>1. Write Your Application Code</h2>
             
@@ -74,7 +74,7 @@
             
                 <h2>2. Build Your Docker Image</h2>
             
-                <p>To containerize your application, you need to create a Dockerfile. This file contains instructions for building a Docker image, which is a lightweight, standalone, and executable package that includes your application and its dependencies.</p>
+                <p>To containerize your application, you need to create a Dockerfile. This file contains instructions for building a Docker image, which is a lightweight, standalone, and executable package that includes your application and its dependencies. Let's take an example of Java application..</p>
             
                 <pre>
                     <code>
@@ -114,12 +114,7 @@
             
                 <h2>3. Push Your Image to a Registry</h2>
             
-                <p>Once you've successfully built your Docker image, you may want to share it with others or deploy it to different environments. This involves pushing the image to a Docker registry.</p>
-            
-                <h3>Using Jenkins or GitHub Actions (For Multiple Services)</h3>
-            
-                <p>If you're managing multiple services, you can automate the image push process using Jenkins or GitHub Actions. Here's a brief overview:</p>
-            
+                <p>Once you've successfully built your Docker image, you may want to share it with others or deploy it to different environments. This involves pushing the image to a Docker registry.</p>            
                 <pre>
                     <code>
                         # Login to Docker Registry
@@ -130,22 +125,19 @@
                         docker push domain_registry/image-name:version
                     </code>
                 </pre>
-            
-                <h3>Manually (For Single Service)</h3>
-            
-                <p>For a single service, you can manually push the Docker image:</p>
-            
+
+                <h2>4. Pull Your Image from the Registry and Run on a Machine</h2>
                 <pre>
-                    <code>
-                        # Pull the Image
-                        docker pull domain_registry/image-name:version
-            
-                        # Run the Image
-                        docker run -p 8000:8000 domain_registry/image-name:version
-                    </code>
-                </pre>
-            
-                <p>By following these steps, you can seamlessly integrate Docker into your development and deployment workflow, making your applications more portable and easier to manage across different environments. Happy coding!</p>
+                  <code>
+                      # Pull the Image
+                      docker pull domain_registry/image-name:version
+          
+                      # Run the Image
+                      docker run -p 8000:8000 domain_registry/image-name:version
+                  </code>
+              </pre>
+
+                <p>We can automate above process using Jenkins or GitHub Actions</p>
 
         <p><a href="../blog.html">Back to Blog</a></p>
     </dev>
